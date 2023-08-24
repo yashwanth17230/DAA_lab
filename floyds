@@ -1,0 +1,49 @@
+package LAB_7;
+import java.util.Scanner;
+public class FLYODS {
+	int min(int i,int j) {
+		if(i<j) {
+			return i;
+		}
+		else return j;
+	}
+	
+	void result(int[][]w,int n) {
+		int i,j,k;
+		for(k=1;k<=n;k++) {
+			for(i=1;i<=n;i++) {
+				for(j=1;j<=n;j++) {
+					w[i][j]=min(w[i][j],w[i][k]+w[k][j]);
+				}
+			}
+		}
+		System.out.println("The shortest path matrix is");
+		for(i=1;i<=n;i++) {
+			for(j=1;j<=n;j++) {
+				System.out.println(w[i][j]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+	public static void main(String[] args) {
+		int n,i,j;
+		int[][] a=new int[10][10];
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the no of vertices");
+		n=sc.nextInt();
+		System.out.println("Enter the weighted matrix");
+		for(i=1;i<=n;i++) {
+			for(j=1;j<=n;j++) {
+				a[i][j]=sc.nextInt();
+			}
+		}
+		FLYODS f =new FLYODS();
+		f.result(a,n);
+	}
+
+}
+/*0 99 3 99
+2 0 99 99
+99 7 0 1
+6 99 9 0*/
