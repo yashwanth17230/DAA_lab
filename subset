@@ -35,22 +35,25 @@ public class SUBSET {
 	static void SUBSET(int cs,int k,int r,int x[],int set[],int d)
 	{ 
 	     x[k]=1;
-		if(cs+set[k]==d)
+	   if(cs+set[k]==d)
 		{
 		   sol++;
-		   System.out.print("\n subset"+sol+"is{");
+		   System.out.print("\nsubset "+sol+" is {");
 		   
-		for(int i=0;i<=k;i++)
-		if(x[i]==1)
-		 {
-		   System.out.print(set[i]+",");
-		 }
-		System.out.print("}");
+			for(int i=0;i<=k;i++) 
+			{
+				if(x[i]==1)
+				 {
+				   System.out.print(set[i]+",");
+				 }
+			}
+		   System.out.print("}");
 		}
 		else if((cs+set[k]+set[k+1])<=d)
 		 {
 		  SUBSET(cs+set[k],k+1,r-set[k],x,set,d);
 		 }
+	   
 		if((cs+r-set[k])>=d&&(cs+set[k+1]<=d))
 		  {
 			  x[k]=0;
@@ -61,3 +64,14 @@ public class SUBSET {
 	}
 
 
+/*
+   Enter the number of elements
+4
+Enter the elements in increasing order:
+3 5 6 7
+enter the value of d:
+15
+sum=21
+
+ subset 1 is {3,5,7,}
+*/
