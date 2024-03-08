@@ -8,16 +8,6 @@ class crc
 		String gen = bf.readLine();
 		System.out.println("enter the data");
 		String data = bf.readLine();
-		for(int i = 0; i<gen.length()-1;i++){import java.io.*;
-class crc
-{
-	public static void main(String args[])throws IOException
-	{
-		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("enter the generator");
-		String gen = bf.readLine();
-		System.out.println("enter the data");
-		String data = bf.readLine();
 		for(int i = 0; i<gen.length()-1;i++){
 			data = data + '0';
 		}
